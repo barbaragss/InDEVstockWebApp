@@ -1,0 +1,22 @@
+﻿@page
+@model InDEVstockWebApp.Pages.ProdutoModel
+@{
+}
+<div class="container">
+    <h1 class="text-center">Lista de produtos</h1>
+    <section>
+        @foreach (var data in Model.Produtos)
+        {
+            <div class="figura-produto">
+                <img src ="@Html.DisplayFor(modelItem => data.image)" alt="blusa @Html.DisplayFor(modelItem => data.Nome)"/>
+
+            </div>
+            <div class="produto-info">
+                <h1> @Html.DisplayNameFor(modelItem => data.Nome)</h1>
+                <h2></h2>
+            </div>
+
+          
+        }
+    </section>
+</div>
