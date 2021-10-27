@@ -10,9 +10,9 @@ using System.Net.Http.Headers;
 using Newtonsoft.Json;
 
 
-namespace InDEVstockWebApp.Pages
+namespace InDEVstockWebApp.Pages.Produtos
 {
-    public class ProdutoModel : PageModel
+    public class IndexModel : PageModel
     {
         public List<Produto> Produtos { get; private set; }
         string baseUrl = ""; //Acho que aqui é a url da API
