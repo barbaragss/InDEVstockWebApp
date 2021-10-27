@@ -6,41 +6,72 @@
     <title>@ViewData["Title"] - InDEVstockWebApp</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="~/css/StyleSheet.css" />
 </head>
+
 <body>
+
     <header>
-        
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container">
-                <a class="navbar-brand" asp-area="" asp-page="/Index">InDEVstockWebApp</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Privacy">Privacy</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
+
+
+        <div class=" text-center mt-2">
+
+            <h1 class="pt-3 pb-3 bg-dark text-white">InDevStock </h1>
+            <h2 class="pt-3 pb-3">A forma mais inteligente de gerenciar o seu estoque de roupas!!</h2>
+            <hr />
+
+        </div>
+
+
     </header>
+
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <a asp-page="/Produtos/Index" class="btn btn-primary form-control btn-block">Cadastrar produto</a>
+            </div>
+            <div class="col">
+
+                <a asp-page="/Produtos/Index" class="btn btn-primary form-control btn-block">Listar Produto</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="text-center mt-5 mb-5">
+        <img src ="https://gcdn.pbrd.co/images/Tuk1eg3JJDeN.webp?o=1"/>
+    </div>
+
+
     <div class="container">
         <main role="main" class="pb-3">
             @RenderBody()
         </main>
     </div>
 
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2021 - InDEVstockWebApp - <a asp-area="" asp-page="/Privacy">Privacy</a>
+    <footer class="p-3 mb-2 bg-dark text-white ">
+
+        <div class="row">
+            <div class="col-sm">
+                <h1>InDEVstock</h1>
+            </div>
+            <div class="col-sm">
+
+                <p>Alberto da Silva Araujo</p>
+                <p>Bárbara Gabriela Sousa</p>
+                <p>Bruno Soares de Oliveira Lopes</p>
+
+            </div>
+            <div class="col-sm">
+
+                <p>Douglas Henrique</p>
+                <p>Gabriel Barbosa Baruque</p>
+                <p>Tarcisio Santana</p>
+
+            </div>
+
         </div>
     </footer>
+
 
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
@@ -48,4 +79,5 @@
 
     @await RenderSectionAsync("Scripts", required: false)
 </body>
+
 </html>
