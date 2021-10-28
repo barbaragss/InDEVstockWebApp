@@ -3,12 +3,21 @@
 @{
 }
 <div class="container">
-    <h1 class="text-center">Lista de produtos</h1>
+    <h1 class="text-center">Lista de Produtos</h1>
     <section>
         @foreach (var data in Model.Produtos)
-        {
-           <h1>vfvfvrvrv</h1>
-            <h1>ththrhrt</h1>
+        {<div class="produto-picture">
+                <img src="@Html.DisplayFor(modelItem => data.image)"
+                     alt="Imagem do @Html.DisplayFor(modelItem => data.Nome)" />
+            </div>
+            <div class="pokemon-info">
+                <h1>Nome: @Html.DisplayFor(modelItem => data.Nome)</h1>
+                <h2>Modelo: @Html.DisplayFor(modelItem => data.Modelo)</h2>
+                <h3>Cor: @Html.DisplayFor(modelItem => data.Cor)</h3>
+                <h3>Tamanho: @Html.DisplayFor(modelItem => data.Tamanho)</h3>
+                <h3>Quantidade: @Html.DisplayFor(modelItem => data.Quantidade)</h3>
+            </div>
+            
         }
     </section>
 </div>
