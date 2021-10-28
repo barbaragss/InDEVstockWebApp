@@ -2,48 +2,66 @@
 @model InDEVstockWebApp.Pages.Produtos.CreateModel
 @{
 }
+<hr class="linha-divisao" />
+<h1 class="cor-cadastro-produto">Cadastrar Produto</h1>
 
-<h1 class="text-left">Adicionar Produto</h1>
-<hr />
-<form method="post">
-    <div class="row">
-        <div class="col-md-12">
+
+<form method="post" class="row form-cadastro shadow mb-5 bg-body rounded">
+    <div class="form-cadastro-informacoes">
+        <h3 class="form-cadastro-descricao">Insira as informações do produto...</h3>
+        <div class="entrada-cadastro">
+            <label for="nome" class="">Nome</label>
             <div class="form-group">
-                <label for="nome" class="control-label">Nome</label>
-                <input type="text" class="form-control" id="Nome" name="Nome" />
+                <input type="text" class="" id="Nome" name="Nome" />
             </div>
         </div>
-        <div class="col-md-6">
+        <div class="entrada-cadastro">
+            <label for="" class="">Modelo</label>
             <div class="form-group">
-                <label for="poderes" class="control-label">Modelo</label>
-                <input type="text" class="form-control" id="Modelo" name="Modelo" />
+                <input type="text" class="" id="Modelo" name="Modelo" />
             </div>
         </div>
-        <div class="col-md-6">
+        <div class="entrada-cadastro">
+            <label for="" class="">Cor</label>
             <div class="form-group">
-                <label for="poderes" class="control-label">Cor</label>
-                <input type="text" class="form-control" id="Cor" name="Cor" />
+                <input type="text" class="" id="Cor" name="Cor" />
             </div>
         </div>
-        <div class="col-md-6">
+        <div class="entrada-cadastro">
+            <label for="" class="">Quantidade</label>
             <div class="form-group">
-                <label for="poderes" class="control-label">Quantidade</label>
-                <input type="text" class="form-control" id="Quantidade" name="Quantidade" />
+                <input type="text" class="" id="Quantidade" name="Quantidade" />
             </div>
         </div>
-        <div class="col-md-6">
+        <div class="entrada-cadastro">
+            <label for="" class="">Tamanho</label>
             <div class="form-group">
-                <label for="poderes" class="control-label">Tamanho</label>
-                <input type="text" class="form-control" id="Tamanho" name="Tamanho" />
+                <input type="text" class="" id="Tamanho" name="Tamanho" />
             </div>
         </div>
-        <div class="col-md-6">
+        <div class="entrada-cadastro">
+            <label for="" class="">image</label>
             <div class="form-group">
-                <label for="poderes" class="control-label">image</label>
-                <input type="text" class="form-control" id="image" name="image" />
+                <input type="text" class="" id="image" name="image" />
+            </div>
+        </div>
+        <div class="botao-cadastro">
+            <div class="entrada-cadastro">
+                <div class="form-group">
+                    <button type="button" class="btn btn-primary btn-sm w-100 form-cadastro-botao">Cadastrar</button>
+                </div>
+            </div>
+            <div class="entrada-cadastro">
+                <div class="form-group">
+                    <button type="button" class="btn btn-outline-secondary btn-sm w-100 form-cadastro-botao-cancelar">Cancelar</button>
+                </div>
             </div>
         </div>
 
     </div>
-
+    <div class="form-cadastro-logo">
+        <div class="d-flex justify-content-center align-items-center h-100">
+            <h1 class="text-white">inDEVstock</h1>
+        </div>
+    </div>
 </form>
