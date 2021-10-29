@@ -15,7 +15,7 @@ namespace InDEVstockWebApp.Pages.Produtos
     {
         [BindProperty]
         public Produto Produto { get; set; }
-        string baseUrl = "https://localhost:44387/";
+        string baseUrl = "https://localhost:44356/";
         public async Task<IActionResult> OnGetAsync(int? id)
         {
             if (id == null)

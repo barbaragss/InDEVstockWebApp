@@ -16,7 +16,7 @@ namespace InDEVstockWebApp.Pages.Produtos
         [BindProperty]
         public Produto produtos { get; set; }
         //URL servidor
-        string baseUrl = "";
+        string baseUrl = "https://localhost:44356/";
         public async Task<IActionResult> OnPostAsync()
         {
             using (var client = new HttpClient())

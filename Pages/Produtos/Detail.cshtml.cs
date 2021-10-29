@@ -14,7 +14,7 @@ namespace InDEVstockWebApp.Pages.Produtos
     public class DetailModel : PageModel
     {
         public Produto Produtos { get; set; }
-        string baseUrl = "http://localhost:49268";
+        string baseUrl = "https://localhost:44356/";
         public async Task<IActionResult> OnGetAsync(int? id)
         {
             if (id == null)
