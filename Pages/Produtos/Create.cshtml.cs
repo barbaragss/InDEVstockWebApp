@@ -30,7 +30,7 @@ namespace InDEVstockWebApp.Pages.Produtos
 
                 if (response.IsSuccessStatusCode)
                 {
-                    return RedirectToPage("./Index");
+                    return RedirectToPage("./Listar");
                 }
                 else
                 {

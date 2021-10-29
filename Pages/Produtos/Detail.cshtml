@@ -10,19 +10,19 @@
     </div>
     <hr />
     <div class="col-md-6">
-        <h3>Tipo: @Html.DisplayFor(model => Model.Produtos.Tamanho)</h3>
+        <h3>Tamanho: @Html.DisplayFor(model => Model.Produtos.Tamanho)</h3>
     </div>
     <div class="col-md-6">
-        <h3>Poderes: @Html.DisplayFor(model => Model.Produtos.Cor)</h3>
+        <h3>Cor: @Html.DisplayFor(model => Model.Produtos.Cor)</h3>
     </div>
     <div class="col-md-6">
-        <h3>Peso: @Html.DisplayFor(model => Model.Produtos.Quantidade)</h3>
+        <h3>Quantidade: @Html.DisplayFor(model => Model.Produtos.Quantidade)</h3>
     </div>   
     
     
 </div>
 <div class="row">
         <a class="btn btn-outline-danger"
-       asp-page="/Pokemons/Delete"
+       asp-page="/Produtos/Delete"
        asp-route-id="@Model.Produtos.Id">Deletar</a>
 </div>

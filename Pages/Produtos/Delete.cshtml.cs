@@ -40,6 +40,7 @@ namespace InDEVstockWebApp.Pages.Produtos
                     //Tranformar a string json em um objeto do tipo Produto
                     Produto = JsonConvert.DeserializeObject<Produto>(result);
                 }
+
             }
 
             return Page();
@@ -68,7 +69,7 @@ namespace InDEVstockWebApp.Pages.Produtos
                 if (response.IsSuccessStatusCode)
                 {
                     //Sucesso! Quero ir para a minha página http://localhost:http://localhost:49268/port/Produtos
-                    return RedirectToPage("./Index");
+                    return RedirectToPage("./Listar");
                 }
                 else
                 {
