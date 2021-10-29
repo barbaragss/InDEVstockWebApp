@@ -15,7 +15,7 @@ namespace InDEVstockWebApp.Pages.Produtos
     public class IndexModel : PageModel
     {
         public List<Produto> Produtos { get; private set; }
-        string baseUrl = ""; //Acho que aqui é a url da API
+        string baseUrl = "http://localhost:49268"; 
         public async Task OnGetAsync()
         {
             using (var client = new HttpClient())

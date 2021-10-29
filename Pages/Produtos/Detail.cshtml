@@ -1,0 +1,28 @@
+﻿@page
+@model InDEVstockWebApp.Pages.Produtos.DetailModel
+@{
+}
+<div class="row">
+    <div class="col-md-12">
+        <img class="mx-auto d-block" src="@Html.DisplayFor(model => Model.Produtos.image)"
+             alt="Imagem do @Html.DisplayFor(model => Model.Produtos.Nome)" />
+        <h1 class="text-center">@Html.DisplayFor(model => Model.Produtos.Nome)</h1>
+    </div>
+    <hr />
+    <div class="col-md-6">
+        <h3>Tipo: @Html.DisplayFor(model => Model.Produtos.Tamanho)</h3>
+    </div>
+    <div class="col-md-6">
+        <h3>Poderes: @Html.DisplayFor(model => Model.Produtos.Cor)</h3>
+    </div>
+    <div class="col-md-6">
+        <h3>Peso: @Html.DisplayFor(model => Model.Produtos.Quantidade)</h3>
+    </div>   
+    
+    
+</div>
+<div class="row">
+        <a class="btn btn-outline-danger"
+       asp-page="/Pokemons/Delete"
+       asp-route-id="@Model.Produtos.Id">Deletar</a>
+</div>
