@@ -2,27 +2,50 @@
 @model InDEVstockWebApp.Pages.Produtos.DetailModel
 @{
 }
-<div class="row">
-    <div class="col-md-12">
-        <img class="mx-auto d-block" src="@Html.DisplayFor(model => Model.Produtos.image)"
-             alt="Imagem do @Html.DisplayFor(model => Model.Produtos.Nome)" />
-        <h1 class="text-center">@Html.DisplayFor(model => Model.Produtos.Nome)</h1>
+<section>
+    <div class="card" style="width: 18rem;">
+        <img class="card-img-top" src="..." alt="Imagem do @Html.DisplayFor(model => Model.Produtos.Nome)">
+        <div class="card-body">
+            <h5 class="card-title">@Html.DisplayFor(model => Model.Produtos.Nome)</h5>
+        </div>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">Tamanho: @Html.DisplayFor(model => Model.Produtos.Tamanho)</li>
+            <li class="list-group-item">Cor: @Html.DisplayFor(model => Model.Produtos.Cor)</li>
+            <li class="list-group-item">Quantidade: @Html.DisplayFor(model => Model.Produtos.Quantidade)</li>
+            <li class="list-group-item">Quantidade: @Html.DisplayFor(model => Model.Produtos.Modelo)</li>
+        </ul>
+        <div class="card-body text-center">
+            <a href="#" class="btn btn-danger" data-toggle="modal" data-target="#delete-modal" data-id="@Model.Produtos.">
+                Deletar
+            </a>
+
+            <a type="button" class="btn btn-primary" asp-page="/Produtos/Listar">Voltar</a>
+            <a type="button" class="btn btn-primary" asp-page="/Produtos/Edita">Editar</a>
+
+        </div>
     </div>
-    <hr />
-    <div class="col-md-6">
-        <h3>Tamanho: @Html.DisplayFor(model => Model.Produtos.Tamanho)</h3>
+</section>
+
+
+
+<div class="modal" id="delete-modal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Título do modal</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>Tem certeza que deseja excluir este item?</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Não</button>
+                <button type="button" class="btn btn-primary">Excluir</button>
+            </div>
+        </div>
     </div>
-    <div class="col-md-6">
-        <h3>Cor: @Html.DisplayFor(model => Model.Produtos.Cor)</h3>
-    </div>
-    <div class="col-md-6">
-        <h3>Quantidade: @Html.DisplayFor(model => Model.Produtos.Quantidade)</h3>
-    </div>   
-    
-    
 </div>
-<div class="row">
-        <a class="btn btn-outline-danger"
-       asp-page="/Produtos/Delete"
-       asp-route-id="@Model.Produtos.Id">Deletar</a>
-</div>
+
+

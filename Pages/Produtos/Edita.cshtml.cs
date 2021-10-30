@@ -14,7 +14,7 @@ namespace InDEVstockWebApp.Pages.Produtos
     public class EditarModel : PageModel
     {
         [BindProperty]
-        public Produto produtos { get; set; }
+        public Produto Produto { get; set; }
 
         string baseUrl = "https://localhost:44356/";
         public async Task<IActionResult> OnGetAsync(int? id)
@@ -22,7 +22,7 @@ namespace InDEVstockWebApp.Pages.Produtos
             if(id == null)
             {
                 //Quando configurar a API mudar o return para notfount();
-                return Page();
+                    return NotFound();
             }
             using(var client = new HttpClient())
             {
@@ -35,7 +35,7 @@ namespace InDEVstockWebApp.Pages.Produtos
                 if (response.IsSuccessStatusCode)
                 {
                     string result = response.Content.ReadAsStringAsync().Result;
-                    produtos = JsonConvert.DeserializeObject<Produto>(result);
+                    Produto = JsonConvert.DeserializeObject<Produto>(result);
                 }
             }
             return Page();
@@ -48,13 +48,13 @@ namespace InDEVstockWebApp.Pages.Produtos
                 client.DefaultRequestHeaders.Clear();
                 client.DefaultRequestHeaders.Accept.Add(
                     new MediaTypeWithQualityHeaderValue("application/json"));
-                HttpResponseMessage response = await client.PutAsJsonAsync($"api/Produtos/{produtos.Id}", produtos);
+                HttpResponseMessage response = await client.PutAsJsonAsync($"api/Produtos/{Produto.Id}", Produto);
                 if (response.IsSuccessStatusCode){
-                    return RedirectToPage("./Index");
+                    return RedirectToPage("./Listar");
                 }
                 else
                 {
-                    return Page();
+                    return RedirectToPage("./Listar");
                 }
             }
         }

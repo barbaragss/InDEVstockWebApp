@@ -3,26 +3,50 @@
 @{
 }
 <div class="container">
-    <h1 class="text-center">Lista de Produtos</h1>
-    <section>
-        @foreach (var data in Model.Produtos)
-        {<div class="produto-picture">
-                <img src="@Html.DisplayFor(modelItem => data.image)"
-                     alt="Imagem do @Html.DisplayFor(modelItem => data.Nome)" />
-            </div>
-         <div class="Produtos-info">
-             <h1>Nome: @Html.DisplayFor(modelItem => data.Nome)</h1>
-             <h2>Id: @Html.DisplayFor(modelItem => data.Id)</h2>
-             <h2>Modelo: @Html.DisplayFor(modelItem => data.Modelo)</h2>
-             <h3>Cor: @Html.DisplayFor(modelItem => data.Cor)</h3>
-             <h3>Tamanho: @Html.DisplayFor(modelItem => data.Tamanho)</h3>
-             <h3>Quantidade: @Html.DisplayFor(modelItem => data.Quantidade)</h3>
-         </div>
-            <a class="btn btn-info"
-               asp-page="/Produtos/Detail"
-               asp-route-id="@data.Id">Detalhes</a>
-        }
+    <h3 class="text-center">Lista de Produtos</h3>
 
-        }
+    <section>
+        <table class="table table-hover">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Nome</th>
+                    <th scope="col">Modelo</th>
+                    <th scope="col">Cor</th>
+                    <th scope="col">Tamanho</th>
+                    <th scope="col">Quantidade</th>
+                    <th scope="col"></th>
+
+                </tr>
+            </thead>
+
+            <tbody>
+                @foreach (var data in Model.Produtos)
+                {
+                    <tr>
+                        <th scope="row">@Html.DisplayFor(modelItem => data.Id)</th>
+                        <td>@Html.DisplayFor(modelItem => data.Nome)</td>
+                        <td>@Html.DisplayFor(modelItem => data.Modelo)</td>
+                        <td> @Html.DisplayFor(modelItem => data.Cor)</td>
+                        <td>  @Html.DisplayFor(modelItem => data.Tamanho)</td>
+                        <td>  @Html.DisplayFor(modelItem => data.Quantidade)</td>
+                        <td>
+                            <a class="btn btn-info"
+                               asp-page="/Produtos/Detail"
+                               asp-route-id="@data.Id">
+                                Detalhes
+                            </a>
+                        </td>
+
+                    </tr>
+                }
+            </tbody>
+        </table>
+
     </section>
 </div>
+
+
+
+
+
