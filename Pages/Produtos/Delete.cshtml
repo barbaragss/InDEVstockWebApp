@@ -15,7 +15,7 @@
                 <p>Tem certeza que deseja excluir este item?</p>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Não</button>
+                <a class="btn btn-secondary" asp-page="/Produtos/Detail" asp-route-id="@Model.Produto.Id">Não</a>
                 <form method="post">
                     <input type="hidden" asp-for="Produto.Id" />
                     <input type="submit" value="Deletar" class="btn btn-danger" />

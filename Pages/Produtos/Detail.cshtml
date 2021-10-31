@@ -15,12 +15,12 @@
             <li class="list-group-item">Quantidade: @Html.DisplayFor(model => Model.Produtos.Modelo)</li>
         </ul>
         <div class="card-body text-center">
-            <a class="btn btn-danger" asp-page="/Produtos/Delete">
+            <a class="btn btn-danger" asp-page="/Produtos/Delete" asp-route-id="@Model.Produtos.Id" >
                 Deletar
             </a>
 
-            <a type="button" class="btn btn-primary" asp-page="/Produtos/Listar">Voltar</a>
-            <a type="button" class="btn btn-primary" asp-page="/Produtos/Edita">Editar</a>
+            <a type="button" class="btn btn-outline-primary" asp-page="/Produtos/Listar">Voltar</a>
+            <a type="button" class="btn btn-outline-primary" asp-page="/Produtos/Edita" asp-route-id="@Model.Produtos.Id">Editar</a>
 
         </div>
     </div>

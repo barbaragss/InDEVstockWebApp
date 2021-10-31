@@ -20,7 +20,7 @@ namespace InDEVstockWebApp.Pages.Produtos
         {
             if (id == null)
             {
-                return Page();
+                return NotFound();
             }
 
             using (var client = new HttpClient())
@@ -53,7 +53,7 @@ namespace InDEVstockWebApp.Pages.Produtos
                     .PutAsJsonAsync("api/Produtos/" + Produto.Id, Produto);
                 if (response.IsSuccessStatusCode)
                 {
-                    return RedirectToPage("./Index");
+                    return RedirectToPage("./Listar");
                 }
                 else
                 {
