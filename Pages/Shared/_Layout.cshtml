@@ -6,7 +6,7 @@
     <title>@ViewData["Title"] - InDEVstockWebApp</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
-    <link rel="stylesheet" href="~/css/StyleSheet.css" />
+
 </head>
 
 <body>
@@ -14,9 +14,10 @@
     <header>
         <div class=" text-center mt-0">
             <a asp-page="/Index"><h1 class="pt-3 pb-3 bg-dark text-white">InDevStock </h1></a>
-         
-            <h2 class="pt-3 pb-3">A forma mais inteligente de gerenciar o seu estoque de roupas!!</h2>
-   
+        
+        </div>
+        <div>
+            <h1 class="mt-5"></h1>
         </div>
     </header>
 
@@ -26,20 +27,9 @@
             @RenderBody()
         </main>
     </div>
-
-    <footer class="text-center mt-0 bg-dark text-white ">
-
-        <div class="row">
-
-            <div class="col-sm">
-                <h1>InDEVstock</h1>
-            </div>
-
-
-        </div>
-    </footer>
-
-
+<footer >
+    <h2 class="footer bg-dark text-white mb-0">InDEVstock</h2>
+</footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
