@@ -20,7 +20,7 @@ namespace InDEVstockWebApp.Pages.Produtos
         {
             if (id == null)
             {
-                return NotFound();
+                return Page();
             }
 
             using (var client = new HttpClient())
@@ -30,7 +30,7 @@ namespace InDEVstockWebApp.Pages.Produtos
                 client.DefaultRequestHeaders.Accept.Add(
                     new MediaTypeWithQualityHeaderValue("application/json"));
                 //Fazendo método GET https://localhost:49268/api/Produto/{ID}
-                HttpResponseMessage response = await client.GetAsync("api/Produto/" + id);
+                HttpResponseMessage response = await client.GetAsync("api/Produtos/" + id);
 
                 //Booleano que nos diz se deu certo ou se teve algum erro
                 if (response.IsSuccessStatusCode)
@@ -65,7 +65,7 @@ namespace InDEVstockWebApp.Pages.Produtos
                 client.DefaultRequestHeaders.Accept.Add(
                     new MediaTypeWithQualityHeaderValue("application/json"));
                 HttpResponseMessage response = await client
-                    .DeleteAsync("api/Produto/" + Produto.Id);
+                    .DeleteAsync("api/Produtos/" + Produto.Id);
                 if (response.IsSuccessStatusCode)
                 {
                     //Sucesso! Quero ir para a minha página http://localhost:http://localhost:49268/port/Produtos

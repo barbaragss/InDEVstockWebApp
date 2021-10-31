@@ -15,22 +15,21 @@ namespace InDEVstockWebApp.Pages.Produtos
     {
         [BindProperty]
         public Produto Produto { get; set; }
-
         string baseUrl = "https://localhost:44356/";
         public async Task<IActionResult> OnGetAsync(int? id)
         {
-            if(id == null)
+            if (id == null)
             {
-                //Quando configurar a API mudar o return para notfount();
-                    return NotFound();
+                return Page();
             }
-            using(var client = new HttpClient())
+
+            using (var client = new HttpClient())
             {
                 client.BaseAddress = new Uri(baseUrl);
                 client.DefaultRequestHeaders.Clear();
                 client.DefaultRequestHeaders.Accept.Add(
                     new MediaTypeWithQualityHeaderValue("application/json"));
-                HttpResponseMessage response = await client.GetAsync($"api/Produtos/{id}");
+                HttpResponseMessage response = await client.GetAsync("api/Produtos/" + id);
 
                 if (response.IsSuccessStatusCode)
                 {
@@ -38,8 +37,10 @@ namespace InDEVstockWebApp.Pages.Produtos
                     Produto = JsonConvert.DeserializeObject<Produto>(result);
                 }
             }
+
             return Page();
         }
+
         public async Task<IActionResult> OnPostAsync()
         {
             using (var client = new HttpClient())
@@ -48,13 +49,15 @@ namespace InDEVstockWebApp.Pages.Produtos
                 client.DefaultRequestHeaders.Clear();
                 client.DefaultRequestHeaders.Accept.Add(
                     new MediaTypeWithQualityHeaderValue("application/json"));
-                HttpResponseMessage response = await client.PutAsJsonAsync($"api/Produtos/{Produto.Id}", Produto);
-                if (response.IsSuccessStatusCode){
-                    return RedirectToPage("./Listar");
+                HttpResponseMessage response = await client
+                    .PutAsJsonAsync("api/Produtos/" + Produto.Id, Produto);
+                if (response.IsSuccessStatusCode)
+                {
+                    return RedirectToPage("./Index");
                 }
                 else
                 {
-                    return RedirectToPage("./Listar");
+                    return Page();
                 }
             }
         }

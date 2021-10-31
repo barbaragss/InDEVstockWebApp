@@ -9,51 +9,65 @@
 <form method="post" class="row form-cadastro shadow mb-5 bg-body rounded">
     <div class="form-cadastro-informacoes">
         <h3 class="form-cadastro-descricao">Insira as informações do produto...</h3>
+
+        <input type="hidden" asp-for="Produto.Id" />
+
         <div class="entrada-cadastro">
-            <label for="nome" class="">Nome</label>
+
             <div class="form-group">
-                <input type="text" class="" id="Nome" name="Nome" />
+                <label asp-for="Produto.Nome" class="control-label">Nome</label>
+                <input asp-for="Produto.Nome" class="form-control" />
+            </div>
+        </div>
+
+        <div class="entrada-cadastro">
+
+            <div class="form-group">
+                <label asp-for="Produto.Modelo" class="control-label">Modelo</label>
+                <input asp-for="Produto.Modelo" class="form-control" />
+            </div>
+        </div>
+
+        <div class="entrada-cadastro">
+
+            <div class="form-group">
+                <label asp-for="Produto.Cor" class="control-label">Cor</label>
+                <input asp-for="Produto.Cor" class="form-control" />
+            </div>
+        </div>
+
+        <div class="entrada-cadastro">
+
+            <div class="form-group">
+                <label asp-for="Produto.Quantidade" class="control-label">Quantidade</label>
+                <input asp-for="Produto.Quantidade" class="form-control" />
+            </div>
+        </div>
+
+        <div class="entrada-cadastro">
+
+            <div class="form-group">
+                <label asp-for="Produto.Tamanho" class="control-label">Tamanho</label>
+                <input asp-for="Produto.Tamanho" class="form-control" />
             </div>
         </div>
         <div class="entrada-cadastro">
-            <label for="" class="">Modelo</label>
+
             <div class="form-group">
-                <input type="text" class="" id="Modelo" name="Modelo" />
+                <label asp-for="Produto.imageUrl" class="control-label">Imagem</label>
+                <input asp-for="Produto.imageUrl" class="form-control" />
             </div>
         </div>
-        <div class="entrada-cadastro">
-            <label for="" class="">Cor</label>
-            <div class="form-group">
-                <input type="text" class="" id="Cor" name="Cor" />
-            </div>
-        </div>
-        <div class="entrada-cadastro">
-            <label for="" class="">Quantidade</label>
-            <div class="form-group">
-                <input type="text" class="" id="Quantidade" name="Quantidade" />
-            </div>
-        </div>
-        <div class="entrada-cadastro">
-            <label for="" class="">Tamanho</label>
-            <div class="form-group">
-                <input type="text" class="" id="Tamanho" name="Tamanho" />
-            </div>
-        </div>
-        <div class="entrada-cadastro">
-            <label for="" class="">image</label>
-            <div class="form-group">
-                <input type="text" class="" id="image" name="image" />
-            </div>
-        </div>
+
         <div class="botao-cadastro">
             <div class="entrada-cadastro">
                 <div class="form-group">
-                    <button type="button" class="btn btn-primary btn-sm w-100 form-cadastro-botao">Salvar Alterações</button>
+                    <input type="submit" value="Create" class="btn btn-primary btn-sm w-100 form-cadastro-botao">Salvar alterações/>
                 </div>
             </div>
             <div class="entrada-cadastro">
                 <div class="form-group">
-                    <button type="button" class="btn btn-outline-secondary btn-sm w-100 form-cadastro-botao-cancelar">Cancelar</button>
+                    <a asp-page="/Produtos/Index" class="btn btn-primary form-control btn-block">Cancelar</a>
                 </div>
             </div>
         </div>
