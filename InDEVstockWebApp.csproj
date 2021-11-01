@@ -21,4 +21,6 @@
     <None Include="Pages\Produtos\Detail.cshtml" />
   </ItemGroup>
 
+
+	
 </Project>
